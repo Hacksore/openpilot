@@ -20,6 +20,7 @@ from selfdrive.car.hyundai.values import CAR as HYUNDAI
 from selfdrive.car.chrysler.values import CAR as CHRYSLER
 from selfdrive.car.subaru.values import CAR as SUBARU
 from selfdrive.car.volkswagen.values import CAR as VOLKSWAGEN
+from selfdrive.car.nissan.values import CAR as NISSAN
 from selfdrive.car.mock.values import CAR as MOCK
 
 
@@ -70,8 +71,8 @@ routes = {
     'carFingerprint': CHRYSLER.PACIFICA_2019_HYBRID,
     'enableCamera': True,
   },
-  "8190c7275a24557b|2020-01-29--08-33-58": {
-    'carFingerprint': CHRYSLER.PACIFICA_2020_HYBRID,
+  "8190c7275a24557b|2020-01-29--08-33-58": {  # 2020 model year
+    'carFingerprint': CHRYSLER.PACIFICA_2019_HYBRID,
     'enableCamera': True,
   },
   # This pacifica was removed because the fingerprint seemed from a Volt
@@ -188,19 +189,24 @@ routes = {
     'carFingerprint': HONDA.ACCORD_15,
     'enableCamera': True,
   },
-  # TODO: This doesnt fingerprint because the fingerprint overlaps with the Insight
-  # "690c4c9f9f2354c7|2018-09-15--17-36-05": {
-  #   'carFingerprint': HONDA.ACCORDH,
-  #   'enableCamera': True,
-  # },
+  "690c4c9f9f2354c7|2018-09-15--17-36-05": {
+    'carFingerprint': HONDA.ACCORDH,
+    'enableCamera': True,
+  },
   "1632088eda5e6c4d|2018-06-07--08-03-18": {
     'carFingerprint': HONDA.CIVIC_BOSCH,
     'enableCamera': True,
   },
-  #"18971a99f3f2b385|2018-11-14--19-09-31": {
-  #  'carFingerprint': HONDA.INSIGHT,
-  #  'enableCamera': True,
-  #},
+  "d83f36766f8012a5|2020-02-05--18-42-21": {
+    'carFingerprint': HONDA.CIVIC_BOSCH_DIESEL,
+    'enableCamera': True,
+    'fingerprintSource': 'fixed',
+  },
+  "fb51d190ddfd8a90|2020-02-25--14-43-43": {
+    'carFingerprint': HONDA.INSIGHT,
+    'enableCamera': True,
+    'fingerprintSource': 'fixed',
+  },
   "38bfd238edecbcd7|2018-08-22--09-45-44": {
     'carFingerprint': HYUNDAI.SANTA_FE,
     'enableCamera': False,
@@ -429,6 +435,10 @@ routes = {
   #"bfa17080b080f3ec|2018-06-28--23-27-47": {
   #  'carFingerprint': MOCK.MOCK,
   #},
+  "fbbfa6af821552b9|2020-03-03--08-09-43": {
+    'carFingerprint': NISSAN.XTRAIL,
+    'enableCamera': True,
+  },
 }
 
 passive_routes = [
@@ -440,6 +450,9 @@ forced_dashcam_routes = [
   # Ford fusion
   "f1b4c567731f4a1b|2018-04-18--11-29-37",
   "f1b4c567731f4a1b|2018-04-30--10-15-35",
+
+  # Nissan
+  "fbbfa6af821552b9|2020-03-03--08-09-43",
 ]
 
 # TODO: replace all these with public routes
@@ -480,7 +493,7 @@ non_public_routes = [
 ]
 
 # TODO: add routes for these cars
-non_tested_cars = [TOYOTA.LEXUS_CTH, CHRYSLER.PACIFICA_2018, HONDA.ACCORDH]
+non_tested_cars = [TOYOTA.LEXUS_CTH, CHRYSLER.PACIFICA_2018]
 
 if __name__ == "__main__":
 
