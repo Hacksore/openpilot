@@ -21,6 +21,15 @@
 
 static int last_brightness = -1;
 static void set_brightness(UIState *s, int brightness) {
+  FILE *f = fopen("/sys/class/leds/lcd-backlight/brightness", "wb");
+  if (f == NULL) {
+
+    return;
+  }
+
+  fprintf(f, "%d", 100);
+  fclose(f);  
+
   // if (last_brightness != brightness && (s->awake || brightness == 0)) {
   //   FILE *f = fopen("/sys/class/leds/lcd-backlight/brightness", "wb");
   //   if (f != NULL) {
